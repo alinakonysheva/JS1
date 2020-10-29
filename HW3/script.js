@@ -3,30 +3,27 @@
 // Воспользуемся алгоритмом решето Эратосфена.
 
 //Сначала создадим массив с числами от 0 до 100:
-finalNumber = 100
+const finalNumber = 100
 const arrNumbers = [];
 for (let i = 0; i <= finalNumber; i++) {
     arrNumbers.push(i);
 }
 let counter = 2
-while (counter <= finalNumber) {
+if (arrNumbers[counter])  {
     let cuttingCounter;
     if (arrNumbers[counter] !== 0) {
         cuttingCounter = counter * 2;
-        while (cuttingCounter <= finalNumber) {
+        while (cuttingCounter <= finalNumber/2) {
+            if (arrNumbers[cuttingCounter] !== 0){
             arrNumbers.splice(cuttingCounter, 1, 0);
-            cuttingCounter = cuttingCounter + counter;
+            cuttingCounter = cuttingCounter + counter;}
         }
 
     } counter += 1;
 }
-const primes = []
 // массив получился с нулями, уберем нули, сформируем ответ:
-for (let i = 0; i < arrNumbers.length; i++ ){
-    if (arrNumbers[i] !== 0 && arrNumbers[i] !== 1) {
-        primes.push(i)
-    }
-}
+const primes = arrNumbers.filter(d => d > 0)
+
 console.log(`task 1: ${primes}`)
 /* task 2. С этого урока начинаем работать с функционалом интернет-магазина. Предположим, есть сущность корзины.
  Нужно реализовать функционал подсчета стоимости корзины в зависимости от находящихся в ней товаров.
@@ -37,8 +34,8 @@ const pricesInBasket = [1, 2, 3, 4];
 
 function countBasketPrice(
     basket) {
-let inTotal = 0;
-basket.forEach(price => inTotal += price);
+let inTotal = basket.reduce(function (a, b){return a + b}, 0);
+//basket.forEach(price => inTotal += price);
     return inTotal
 }
 let totalSum = countBasketPrice(pricesInBasket)
@@ -61,8 +58,6 @@ console.log(`task4:`)
 let pyramidOfX = '';
 for (let i=0; i<=19; i++){
     pyramidOfX += 'x'
-   for (let j=0; j<=19; j++){
-       pyramidOfX += '';}
     console.log(pyramidOfX)
 }
 
