@@ -39,18 +39,18 @@ class Product {
 }
 
 class Basket {
-    productsInBasket = [];
+    products = [];
     get total() {
-        return this.productsInBasket.map(function (p){return p.price}).reduce(function (price1, price2){return price1 + price2}, 0)
+        return this.products.map(function (p){return p.price}).reduce(function (price1, price2){return price1 + price2}, 0)
     }
     add (p) {
-        this.productsInBasket.push(p)
+        this.products.push(p)
     }
     remove (p){
-        delete this.productsInBasket[this.productsInBasket.indexOf(p)]
+        delete this.products[this.products.indexOf(p)]
     }
     get productNames(){
-        return this.productsInBasket.map(function (p){return p.name})
+        return this.products.map(function (p){return p.name})
     }
 }
 const product1 = new Product('iris', 1)

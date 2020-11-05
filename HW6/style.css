@@ -1,0 +1,61 @@
+header {
+    background-color: #5f8b6c;
+    color: white;
+    min-height: 100px;
+    font-size: 40px;
+    display: flex;
+    justify-content: space-between;
+
+}
+h1{
+    color: #5f8b92;
+}
+main {
+    margin: 100px 0 0 0;
+    font-size: 25px;
+    align-content: center;
+
+}
+.list_products {
+
+}
+
+.product {}
+
+.product_image {
+
+}
+.basket {
+
+}
+.basket_button {
+    padding: 8px 16px;
+    border-radius: 5px;
+    border: 1px solid #fff;
+    cursor: pointer;
+    user-select: none;
+    outline: none;
+    display: inline-block;
+    background-color: #5f8b92;
+    color: #fff;
+
+}
+.basket_list {
+    display: none;
+}
+
+.basket_list.shown {
+    display: block;
+}
+.product_image {
+    max-width: 150px;
+}
+
+.product_in_basket{
+
+}
+.basket_sum{
+
+}
+
+.empty_basket
